@@ -14,12 +14,12 @@ M=D     //Le doy el valor de 16384
 A=M     //A = M de R1
 M=-1    //A la ubicacion A = M de R1 le ponemos el valor en memoria de -1
 @R1     //vamos a la ubicacion del contador R1
-M=A+1   //Sumamos +1 Al contador R1
+M=M+1   //Sumamos +1 Al contador R1
 @R1
 D=A
 @24576 //quiero lograr: IF D<24576 go to line 9; A=24576
 D=D-A   //D = @R1-24576 = -1
-@8
+@12
 D;JLT //if D<0, go to @9
 
 // Juan Sebastian Mandon Sierra
