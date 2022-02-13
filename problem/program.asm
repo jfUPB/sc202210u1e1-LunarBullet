@@ -1,4 +1,4 @@
-@SCREEN //@16384
+@16384 //@16384
 D=A     //guardo en D el valor 16384
 @R1     //accedo a R1
 (BLACKLOOPSTART)
