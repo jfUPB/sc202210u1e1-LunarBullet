@@ -11,17 +11,6 @@ D=M
 D=D-A
 @BLACKLOOPSTART
 D;JEQ
-
-
-
-
-
-
-
-
-
-
-
 @SCREEN //guardamos a ubicacion 16384 en A
 D=A     //Asignamos a D el valor de A (16384)
 @R1     //Ubicacion 1, nuestro contador de ubicaciones para screen
@@ -32,6 +21,14 @@ M=-1    // A la ubicacion 16384+1 le asignamos valor de -1
 D=A     //guardo en D el valor 16384
 @R1     //accedo a R1
 (BLACKLOOPSTART)
+//primero verificamos caso que se presione la tecla C
+@KBD
+D=M
+@67
+D=D-A
+@BLANKLOOPSTART //Si se presiona, pues vamos al loop de limpìar pantalla
+D;JEQ
+//Loop de todo negro inicia aca
 M=D     //Le doy el valor de 16384 a R1 --start of black fill loop--
 @R1     //posicion en memoria 1
 A=M     //A = M de R1 (basicamente la escencia del contador!)
@@ -43,8 +40,17 @@ D=A     //Guardamos en D el valor @R1
 @24576 //quiero lograr: IF D<24576 go to line BLACKLOOPSTART; A=24576
 D=D-A   //D = (la ubicacion almacenada en D, que es @R1)-(24576, que es el valor almacenado en A anterior) = -1
 @BLACKLOOPSTART     
-D;JLT //Si D es menor a 0, vamos a @12
+D;JLT //Si D es menor a 0, vamos a @BLACKLOOPSTART
+
 (BLANKLOOPSTART)
+//primero verificamos caso que se presione la tecla F
+@KBD
+D=M
+@70
+D=D-A
+@BLACKLOOPSTART //Si se presiona, pues vamos al loop de limpiar pantalla
+D;JEQ
+//Loop de todo negro inicia aca
 M=D     //Le doy el valor de 16384 a R1 --start of black fill loop--
 @R3     //posicion en memoria 3
 A=M     //A = M de R1 (basicamente la escencia del contador!)
@@ -56,7 +62,7 @@ D=A     //Guardamos en D el valor @R1
 @24576 //quiero lograr: IF D<24576 go to line BLANKLOOPSTART; A=24576
 D=D-A   //D = (la ubicacion almacenada en D, que es @R3)-(24576, que es el valor almacenado en A anterior) = 0
 @BLACKLOOPSTART     
-D;JLT //Si D es menor a 0, vamos a @12
+D;JLT //Si D es menor a 0, vamos a @BLANKLOOPSTART
 
 // Juan Sebastian Mandon Sierra
 // 000426587
