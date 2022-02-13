@@ -1,6 +1,4 @@
 @SCREEN //guardamos a ubicacion 16384 en A
-M=-1    //Asignamos el valor -1 a la ubicacion 16384 en memoria
-@SCREEN //guardamos a ubicacion 16384 en A
 D=A     //Asignamos a D el valor de A (16384)
 @R1     //Ubicacion 1, nuestro contador de ubicaciones para screen
 M=D     //Asignamos a ubicacion 1 el valor de D (16384)
@@ -19,7 +17,7 @@ M=M+1   //Sumamos +1 Al contador R1
 D=A     //Guardamos en D el valor @R1
 @24576 //quiero lograr: IF D<24576 go to line 9; A=24576
 D=D-A   //D = (la ubicacion almacenada en D, que es @R1)-(24576, que es el valor almacenado en A anterior) = -1
-@12     
+@10     
 D;JLT //Si D es menor a 0, vamos a @12
 
 // Juan Sebastian Mandon Sierra
