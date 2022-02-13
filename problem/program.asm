@@ -17,6 +17,9 @@ D=A     //Guardamos en D el valor @R1
 D=D-A   //D = (la ubicacion almacenada en D, que es @R1)-(24576, que es el valor almacenado en A anterior) = -1
 @BLACKLOOPSTART     
 D;JLT //Si D es menor a 0, vamos a @BLACKLOOPSTART
+D=0
+@LOOPBREAKER
+D;JEQ
 
 (BLANKLOOPSTART)
 
@@ -33,6 +36,11 @@ D=A     //Guardamos en D el valor @R1
 D=D-A   //D = (la ubicacion almacenada en D, que es @R3)-(24576, que es el valor almacenado en A anterior) = 0
 @BLACKLOOPSTART     
 D;JLT //Si D es menor a 0, vamos a @BLANKLOOPSTART
+
+(LOOPBREAKER)
+D=0
+@LOOPBREAKER
+D;JEQ
 
 // Juan Sebastian Mandon Sierra
 // 000426587
