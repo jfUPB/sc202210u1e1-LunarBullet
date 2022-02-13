@@ -1,7 +1,12 @@
+(INICIO)
 @SCREEN //Ubicacion en memoria de la pantalla
 D=A     //Guardo la ubicacion de screen en D
 @R1     //mi contador, posicion R1 en memoria
 M=D     //guardo el valor D en A (basicamente inicializo el valor de R1, mi contador, a 16384)
+@KBD
+D=M
+@INICIO
+D;JEQ
 (LLENARPANTALLALOOP)
 @R1     //Posicion 1
 A=M     //Posicion del valor interno de R1
@@ -17,7 +22,6 @@ D;JLE
 D;JMP
 
 (ROMPERLOOP)
-D=0
 @ROMPERLOOP
 D;JMP
 
