@@ -1,23 +1,23 @@
 @SCREEN //Ubicacion en memoria de la pantalla
 D=A     //Guardo la ubicacion de screen en D
-@R1 //mi contador, posicion R1 en memoria
-M=D //guardo el valor D en A (basicamente inicializo el valor de R1, mi contador, a 16384)
-(SCREENFILL)
+@R1     //mi contador, posicion R1 en memoria
+M=D     //guardo el valor D en A (basicamente inicializo el valor de R1, mi contador, a 16384)
+(LLENARPANTALLALOOP)
 @R1
 A=M
 M=-1
 @R1
 M=M+1
-D=M
+M=D
 @24575
 D=D-A
-@SCREENFILL
+@LLENARPANTALLALOOP
 D;JLE
-@BREAK
+@ROMPERLOOP
 D;JMP
 
-(BREAK)
-@BREAK
+(ROMPERLOOP)
+@ROMPERLOOP
 D;JMP
 
 
