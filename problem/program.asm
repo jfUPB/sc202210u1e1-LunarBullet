@@ -34,7 +34,7 @@ M=M+1   //Posicion 1, le sumo 1 al contador.
 D=M     //D = valor en memoria de R1
 @R1
 D=M
-@24575
+@24576
 D=D-A
 @INICIO
 D;JEQ
@@ -50,7 +50,7 @@ M=M+1   //Posicion 1, le sumo 1 al contador.
 D=M     //D = valor en memoria de R1
 @R1
 D=M
-@24575
+@24576
 D=D-A
 @INICIO
 D;JEQ
