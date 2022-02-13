@@ -1,3 +1,10 @@
+// juan sebastian mandon sierra
+// 000426587
+// juan.mandon@upb.edu.co
+
+//SCREEN IS 16384 to 24575
+//KEYBOARD OR KBD IS 24576
+
 (INICIO)
 @SCREEN //Ubicacion en memoria de la pantalla
 D=A     //Guardo la ubicacion de screen en D
@@ -49,14 +56,3 @@ D=D-A
 D;JEQ
 @LIMPIARPANTALLALOOP
 D;JMP
-
-
-// juan sebastian mandon sierra
-// 000426587
-// juan.mandon@upb.edu.co
-
-//SCREEN IS 16384 to 24575
-//KEYBOARD OR KBD IS 24576
-
-
-
