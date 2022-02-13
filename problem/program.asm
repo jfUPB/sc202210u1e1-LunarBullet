@@ -32,14 +32,18 @@ M=-1    //Al valor interno de R1 le asigno -1
 @R1     //Posicion 1
 M=M+1   //Posicion 1, le sumo 1 al contador.
 D=M     //D = valor en memoria de R1
-@R1
-D=M
-@24576
-D=D-A
-@INICIO
-D;JEQ
-@LLENARPANTALLALOOP
-D;JMP
+@R1      //Posicion 1
+D=M     //asignamos a D el valor interno de R1
+@24576  // A = 24576
+D=D-A   
+//----Si D=0, significa que ya contamos, sin llenar el valor
+//24576 osea que la pantalla esta llena, y volvemos 
+//al inicio a ver que tecla unde el usuario
+@INICIO 
+D;JEQ   @si d = 0 vamos a inicio
+@LLENARPANTALLALOOP //de lo contrario, significa que
+//no esta llena la pantalla, a si que vamos a el loop para seguir
+D;JMP //osea el loop LLENARPANTALLALOOP
 
 (LIMPIARPANTALLALOOP)
 @R1     //Posicion 1
@@ -48,11 +52,15 @@ M=0    //Al valor interno de R1 le asigno -1
 @R1     //Posicion 1
 M=M+1   //Posicion 1, le sumo 1 al contador.
 D=M     //D = valor en memoria de R1
-@R1
-D=M
-@24576
-D=D-A
+@R1      //Posicion 1
+D=M     //asignamos a D el valor interno de R1
+@24576  // A = 24576
+D=D-A   
+//----Si D=0, significa que ya contamos, sin llenar el valor
+//24576 osea que la pantalla esta llena, y volvemos 
+//al inicio a ver que tecla unde el usuario
 @INICIO
-D;JEQ
-@LIMPIARPANTALLALOOP
-D;JMP
+D;JEQ   @si d = 0 vamos a inicio
+@LIMPIARPANTALLALOOP //de lo contrario, significa que
+//no esta LIMPIA la pantalla, a si que vamos a el loop para seguir
+D;JMP   //osea el loop LIMPIARPANTALLALOOP
