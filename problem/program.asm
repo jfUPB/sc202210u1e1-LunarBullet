@@ -40,7 +40,7 @@ D=D-A
 //24576 osea que la pantalla esta llena, y volvemos 
 //al inicio a ver que tecla unde el usuario
 @INICIO 
-D;JEQ   @si d = 0 vamos a inicio
+D;JEQ   //si d = 0 vamos a inicio
 @LLENARPANTALLALOOP //de lo contrario, significa que
 //no esta llena la pantalla, a si que vamos a el loop para seguir
 D;JMP //osea el loop LLENARPANTALLALOOP
@@ -60,7 +60,7 @@ D=D-A
 //24576 osea que la pantalla esta llena, y volvemos 
 //al inicio a ver que tecla unde el usuario
 @INICIO
-D;JEQ   @si d = 0 vamos a inicio
+D;JEQ   //si d = 0 vamos a inicio
 @LIMPIARPANTALLALOOP //de lo contrario, significa que
 //no esta LIMPIA la pantalla, a si que vamos a el loop para seguir
 D;JMP   //osea el loop LIMPIARPANTALLALOOP
