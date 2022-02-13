@@ -13,7 +13,13 @@ D=M
 D=D-A
 @LLENARPANTALLALOOP
 D;JLE
+@ROMPERLOOP
+D;JMP
 
+(ROMPERLOOP)
+D=0
+@ROMPERLOOP
+D;JMP
 
 
 // juan sebastian mandon sierra
